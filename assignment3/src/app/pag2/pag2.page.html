@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Public health Unit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let item of data1" color='danger'>
+      File Date: {{item.FILE_DATE}}<br>
+      Public Health Unit: {{item.PHU_NAME}}<br> 
+      Public Health unit Number: {{item.PHU_NUM}}<br>
+      Active Cases: {{item.ACTIVE_CASES}}<br>
+      Resolved Cases: {{item.RESOLVED_CASES}}<br>
+      Deaths: {{item.DEATHS}}<br>
+      </ion-card>
+</ion-content>

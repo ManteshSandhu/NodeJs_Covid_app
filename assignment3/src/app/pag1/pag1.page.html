@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Schools Covid-19 details</ion-title>
+  </ion-toolbar>
+</ion-header>
+ <ion-content>
+  <ion-button (click)="displayF1()">Summary of Cases in Schools</ion-button>
+  <ion-card *ngFor="let item of data1" color='secondary'>Date Reported: {{item.reported_date}} 
+    <br>Current Schools with cases: {{item.current_schools_w_cases}}<br>
+    Current Schools Closed: {{item.current_schools_closed}}<br> 
+    Total number of schools: {{item.current_total_number_schools}}<br>
+    School related cases: {{item.cumulative_school_related_cases}}<br>
+    School related staff cases: {{item.cumulative_school_related_staff_cases}}<br>
+    School related Student cases: {{item.cumulative_school_related_student_cases}}<br>
+    School related unspecified cases: {{item.cumulative_school_related_unspecified_cases}}</ion-card>
+<br>
+  <ion-button (click)="displayF2()" color='success'>School Targeted testing summary</ion-button>
+  <ion-card *ngFor="let item2 of data2" color='secondary'>Date Reported: {{item2.reported_date}} 
+    <br>School board name: {{item2.school_board_name}}<br>
+    Schools invited: {{item2.schools_invited_to_participate}}<br> 
+    New tests conducted: {{item2.new_tests_conducted}}<br>
+    New cases identified: {{item2.new_cases_identified}}<br>
+    Cummulative conducted tests: {{item2.cumulative_conducted_tests}}<br>
+    Cases identified: {{item2.cumulative_cases_identified}}<br>
+   </ion-card>
+  <br>
+  <ion-button (click)="displayF3()" color='warning'>Cases in School board partners</ion-button>
+  <ion-card *ngFor="let item3 of data3" color='secondary'>
+    Date Reported: {{item3.reported_date}}<br>
+    Schools board: {{item3.school_board}}<br> 
+    Municipality: {{item3.municipality}}<br>
+    Confirmed School partner cases: {{item3.confirmed_school_partner_cases}}<br>
+  </ion-card>
+</ion-content>
